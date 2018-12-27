@@ -2,6 +2,8 @@
 {% block title %} UVI Search {% endblock %}
 {% block body %}
 
+{% set URL_PREFIX = '/verb-index/beta/' %}
+
 <script>
 //Example adapted from: https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp
 window.onscroll = function() {scrollFunction()};
@@ -56,19 +58,19 @@ $(document).ready(function(){
 <!--Begin Navbar-->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark justify-content-center navbar-fixed-top">
   <!-- <img src="/static/images/clear-logo.png" height="80px" alt=""> -->
-  <a class="navbar-brand" href={{ url_for('index') }}>
+  <a class="navbar-brand" href={{URL_PREFIX ~ url_for('index') }}>
     <img src="/verb-index/beta/static/images/clear_orig.png" height="150px" id="logo">
     Unified Verb Index
   </a>
   <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href={{ url_for('contact_us') }}>Contact Us</a>
+        <a class="nav-link" href={{URL_PREFIX ~ url_for('contact_us') }}>Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href={{ url_for('references_page') }}>Reference Pages</a>
+        <a class="nav-link" href={{URL_PREFIX ~ url_for('references_page') }}>Reference Pages</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href={{ url_for('references_page') }}>Tutorial</a>
+        <a class="nav-link" href={{URL_PREFIX ~ url_for('references_page') }}>Tutorial</a>
       </li>
     </ul>
 </nav>
